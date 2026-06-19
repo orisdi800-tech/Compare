@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مقارنة شاملة — أفضل 6 هواتف في فئتها</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0D0D14;--ink2:#3A3A55;--ink3:#7B7B99;
+  --surf:#FFFFFF;--surf2:#F7F7FB;--line:#E8E8F0;
+  --a1:#7B5EA7;--a1h:#6A4E94;--a1l:rgba(123,94,167,.08);
+  --gold:#C9A24A;--gold-l:rgba(201,162,74,.1);
+  --green:#1E9E6B;--green-l:rgba(30,158,107,.1);
+  --red:#D6483F;--red-l:rgba(214,72,63,.08);
+  --focus-ring:rgba(123,94,167,.15);
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--surf2);color:var(--ink);line-height:1.6}
+
+.wrap{max-width:980px;margin:0 auto;padding:2rem 1.5rem 4rem}
+
+/* ══════════════ HERO (dark panel like Aurora) ══════════════ */
+.hero{
+  background:var(--ink);
+  border-radius:28px;
+  padding:3.2rem 3rem;
+  position:relative;overflow:hidden;
+  margin-bottom:2rem;
+  box-shadow:0 24px 72px rgba(0,0,0,.16);
+}
+.dr{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);pointer-events:none}
+.dr1{width:380px;height:380px;top:-140px;left:-120px}
+.dr2{width:240px;height:240px;bottom:-100px;right:-80px}
+.dr3{width:130px;height:130px;top:30%;right:14%}
+
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:2.2rem;position:relative}
+.brand-icon{width:44px;height:44px;border-radius:13px;background:var(--a1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-icon svg{width:22px;height:22px;stroke:white;fill:none;stroke-width:2}
+.brand-name{font-size:14px;font-weight:800;color:rgba(255,255,255,.92)}
+.brand-tagline{font-size:11.5px;color:rgba(255,255,255,.4);margin-top:1px}
+
+.hero-title{font-size:32px;font-weight:900;color:#fff;line-height:1.3;margin-bottom:1rem;position:relative}
+.hero-title em{font-style:normal;color:var(--a1)}
+.hero-desc{font-size:14.5px;color:rgba(255,255,255,.55);line-height:1.9;max-width:620px;margin-bottom:2rem;position:relative}
+
+.hero-meta{display:flex;gap:.7rem;flex-wrap:wrap;position:relative}
+.meta-pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);font-size:12.5px;font-weight:700;padding:7px 14px;border-radius:50px}
+.meta-pill svg{width:14px;height:14px;stroke:rgba(255,255,255,.55);fill:none;stroke-width:2}
+
+/* ══════════════ SECTION CARD ══════════════ */
+.card{
+  background:var(--surf);
+  border:1.5px solid var(--line);
+  border-radius:22px;
+  padding:2.2rem 2.4rem;
+  margin-bottom:1.5rem;
+}
+.sec-head{display:flex;align-items:center;gap:13px;margin-bottom:1.6rem}
+.sec-icon{width:42px;height:42px;border-radius:12px;background:var(--a1l);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-icon svg{width:21px;height:21px;stroke:var(--a1);fill:none;stroke-width:2}
+.sec-title{font-size:19px;font-weight:800;color:var(--ink)}
+.sec-sub{font-size:12.5px;color:var(--ink3);margin-top:2px;font-weight:600}
+
+/* ══════════════ COMPARISON TABLE ══════════════ */
+.table-wrap{overflow-x:auto;border-radius:14px;border:1.5px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:760px}
+thead th{
+  background:var(--ink);color:#fff;
+  font-size:12.5px;font-weight:800;
+  padding:13px 14px;text-align:right;
+  white-space:nowrap;
+}
+thead th:first-child{border-radius:0}
+tbody td{
+  padding:13px 14px;font-size:13.5px;font-weight:600;color:var(--ink2);
+  border-bottom:1px solid var(--line);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:var(--surf2)}
+tbody td:first-child{font-weight:800;color:var(--ink);background:var(--a1l)}
+.yes{color:var(--green);font-weight:900}
+.no{color:var(--red);font-weight:900}
+.unsure{color:var(--ink3);font-weight:700;font-size:12px}
+
+/* ══════════════ RANKING LIST ══════════════ */
+.rank-list{display:flex;flex-direction:column;gap:.7rem}
+.rank-item{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;
+  background:var(--surf2);transition:border-color .15s;
+}
+.rank-item.gold{border-color:rgba(201,162,74,.35);background:var(--gold-l)}
+.rank-item.silver{border-color:rgba(123,94,167,.3);background:var(--a1l)}
+.rank-badge{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:900;color:#fff;background:var(--ink3);
+}
+.rank-item.gold .rank-badge{background:var(--gold)}
+.rank-item.silver .rank-badge{background:var(--a1)}
+.rank-body{flex:1;min-width:0}
+.rank-name{font-size:14.5px;font-weight:800;color:var(--ink)}
+.rank-desc{font-size:12.5px;color:var(--ink3);font-weight:600;margin-top:1px}
+
+/* ══════════════ DEVICE PROFILE CARDS ══════════════ */
+.profile-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.profile{
+  border:1.5px solid var(--line);border-radius:16px;padding:1.4rem 1.6rem;
+  background:var(--surf2);
+}
+.profile-head{display:flex;align-items:center;gap:12px;margin-bottom:.9rem}
+.profile-rank{
+  width:32px;height:32px;border-radius:9px;background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;
+}
+.profile-name{font-size:15.5px;font-weight:800;color:var(--ink)}
+.profile-tag{font-size:11.5px;color:var(--a1);font-weight:700;margin-top:1px}
+.profile-points{display:flex;flex-direction:column;gap:6px;padding-right:44px}
+.profile-points li{font-size:13px;color:var(--ink2);font-weight:600;list-style:none;display:flex;align-items:flex-start;gap:7px}
+.profile-points li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--a1);flex-shrink:0;margin-top:7px}
+
+/* ══════════════ FINAL VERDICT ══════════════ */
+.verdict{
+  background:var(--ink);border-radius:22px;padding:2.4rem 2.6rem;
+  position:relative;overflow:hidden;margin-bottom:1.5rem;
+}
+.verdict .dr{border-color:rgba(255,255,255,.05)}
+.verdict-title{font-size:20px;font-weight:900;color:#fff;margin-bottom:1.6rem;position:relative;display:flex;align-items:center;gap:10px}
+.verdict-title svg{width:22px;height:22px;stroke:var(--a1);fill:none;stroke-width:2}
+
+.verdict-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;position:relative}
+.v-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.4rem 1.5rem}
+.v-card.win{border-color:rgba(201,162,74,.4);background:rgba(201,162,74,.08)}
+.v-rank-icon{font-size:22px;margin-bottom:.6rem}
+.v-name{font-size:15px;font-weight:800;color:#fff;margin-bottom:.4rem}
+.v-desc{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.7;font-weight:600}
+
+.verdict-note{
+  margin-top:1.4rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);
+  font-size:13px;color:rgba(255,255,255,.6);line-height:1.9;position:relative;font-weight:600
+}
+.verdict-note strong{color:var(--a1);font-weight:800}
+
+/* ══════════════ FOOTER / AUTHOR ══════════════ */
+.footer-card{
+  display:flex;align-items:center;gap:14px;
+  background:var(--surf);border:1.5px solid var(--line);border-radius:18px;
+  padding:1.3rem 1.6rem;
+}
+.footer-avatar{
+  width:48px;height:48px;border-radius:50%;background:var(--a1);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.footer-avatar svg{width:23px;height:23px;stroke:white;fill:none;stroke-width:2}
+.footer-label{font-size:11px;color:var(--ink3);font-weight:700}
+.footer-name{font-size:15px;font-weight:800;color:var(--ink);margin-top:1px}
+
+/* ══════════════ MOBILE ══════════════ */
+@media(max-width:680px){
+  .wrap{padding:1rem .85rem 3rem}
+
+  .hero{padding:1.6rem 1.4rem;border-radius:22px}
+  .dr{display:none}
+  .brand{margin-bottom:1.4rem}
+  .brand-icon{width:38px;height:38px;border-radius:11px}
+  .brand-icon svg{width:18px;height:18px}
+  .hero-title{font-size:23px}
+  .hero-desc{font-size:13px;margin-bottom:1.4rem}
+  .meta-pill{font-size:11.5px;padding:6px 12px}
+
+  .card{padding:1.5rem 1.2rem;border-radius:18px}
+  .sec-icon{width:36px;height:36px;border-radius:10px}
+  .sec-icon svg{width:18px;height:18px}
+  .sec-title{font-size:16.5px}
+
+  table{min-width:680px}
+  thead th{font-size:11.5px;padding:11px 10px}
+  tbody td{font-size:12.5px;padding:11px 10px}
+
+  .verdict{padding:1.6rem 1.3rem;border-radius:18px}
+  .verdict-grid{grid-template-columns:1fr}
+  .verdict-title{font-size:17px}
+
+  .profile-points{padding-right:0;margin-top:.4rem}
+  .footer-card{padding:1.1rem 1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ══════════ HERO ══════════ -->
+  <div class="hero">
+    <div class="dr dr1"></div><div class="dr dr2"></div><div class="dr dr3"></div>
+
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <div>
+        <div class="brand-name">مقارنة الهواتف الذكية</div>
+        <div class="brand-tagline">تحليل شامل ومُحدّث</div>
+      </div>
+    </div>
+
+    <h1 class="hero-title">من يتفوّق في <em>فئة المتوسط الراقي؟</em></h1>
+    <p class="hero-desc">مقارنة تفصيلية بين ستة هواتف بارزة من حيث المعالج، الكاميرا، شبكة Wi-Fi، جودة التصوير، الواجهة، ومدة دعم التحديثات — لمساعدتك على اتخاذ القرار الصحيح.</p>
+
+    <div class="hero-meta">
+      <div class="meta-pill"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/></svg> 6 أجهزة</div>
+      <div class="meta-pill"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 6 معايير رئيسية</div>
+      <div class="meta-pill"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> أحدث الإصدارات</div>
+    </div>
+  </div>
+
+  <!-- ══════════ OVERVIEW TABLE ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <div>
+        <div class="sec-title">المقارنة العامة للمواصفات</div>
+        <div class="sec-sub">نظرة شاملة على أهم الفروقات بين الأجهزة الستة</div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>المعيار</th>
+            <th>Xiaomi 13T Pro</th>
+            <th>Honor 400</th>
+            <th>Poco X7</th>
+            <th>Redmi Note 15 Pro</th>
+            <th>Infinix Note 50 Pro</th>
+            <th>Realme 15T</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>المعالج</td>
+            <td>Dimensity 9200+</td>
+            <td>Snapdragon 7 Gen 3</td>
+            <td>Dimensity 7300 Ultra</td>
+            <td>Dimensity 7400 Ultra</td>
+            <td>Helio G100 / Dimensity</td>
+            <td>فئة متوسطة</td>
+          </tr>
+          <tr>
+            <td>دعم 5G</td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="unsure">بعض النسخ</span></td>
+            <td><span class="yes">✓ نعم</span></td>
+          </tr>
+          <tr>
+            <td>شبكة Wi-Fi</td>
+            <td>Wi-Fi 7</td>
+            <td>Wi-Fi 6</td>
+            <td>Wi-Fi 6</td>
+            <td>Wi-Fi 6</td>
+            <td>Wi-Fi 5</td>
+            <td>Wi-Fi 6</td>
+          </tr>
+          <tr>
+            <td>تصوير خلفي 4K60</td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="no">✗ غالباً 4K30</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="unsure">غير مؤكد</span></td>
+          </tr>
+          <tr>
+            <td>تصوير أمامي 4K</td>
+            <td><span class="yes">✓ نعم</span></td>
+            <td><span class="yes">✓ 4K30</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="no">✗ لا</span></td>
+            <td><span class="unsure">غير مؤكد</span></td>
+          </tr>
+          <tr>
+            <td>سنوات التحديث</td>
+            <td>4 نظام + 5 أمان</td>
+            <td>6 نظام + 6 أمان</td>
+            <td>3 نظام + 4 أمان</td>
+            <td>3–4 سنوات</td>
+            <td>~2 سنوات</td>
+            <td>3–4 سنوات</td>
+          </tr>
+          <tr>
+            <td>قوة الكاميرا</td>
+            <td>ممتازة جداً</td>
+            <td>ممتازة</td>
+            <td>جيدة</td>
+            <td>جيدة جداً</td>
+            <td>جيدة</td>
+            <td>جيدة</td>
+          </tr>
+          <tr>
+            <td>واجهة النظام</td>
+            <td>HyperOS</td>
+            <td>MagicOS</td>
+            <td>HyperOS</td>
+            <td>HyperOS</td>
+            <td>XOS</td>
+            <td>Realme UI</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════ PROCESSOR RANKING ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg></div>
+      <div>
+        <div class="sec-title">ترتيب قوة المعالج</div>
+        <div class="sec-sub">الفارق كبير لصالح Xiaomi 13T Pro — أقرب إلى فئة الرائدة</div>
+      </div>
+    </div>
+    <div class="rank-list">
+      <div class="rank-item gold"><div class="rank-badge">1</div><div class="rank-body"><div class="rank-name">Xiaomi 13T Pro</div><div class="rank-desc">Dimensity 9200+ — أداء قريب من فئة الرائدة</div></div></div>
+      <div class="rank-item silver"><div class="rank-badge">2</div><div class="rank-body"><div class="rank-name">Honor 400</div><div class="rank-desc">Snapdragon 7 Gen 3 — توازن قوي بين الأداء والكفاءة</div></div></div>
+      <div class="rank-item"><div class="rank-badge">3</div><div class="rank-body"><div class="rank-name">Redmi Note 15 Pro</div><div class="rank-desc">Dimensity 7400 Ultra</div></div></div>
+      <div class="rank-item"><div class="rank-badge">4</div><div class="rank-body"><div class="rank-name">Poco X7</div><div class="rank-desc">Dimensity 7300 Ultra</div></div></div>
+      <div class="rank-item"><div class="rank-badge">5</div><div class="rank-body"><div class="rank-name">Realme 15T</div><div class="rank-desc">معالج فئة متوسطة</div></div></div>
+      <div class="rank-item"><div class="rank-badge">6</div><div class="rank-body"><div class="rank-name">Infinix Note 50 Pro</div><div class="rank-desc">Helio G100 / Dimensity حسب النسخة</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CAMERA RANKING WITH PROFILES ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+      <div>
+        <div class="sec-title">ترتيب جودة الكاميرات</div>
+        <div class="sec-sub">من الأقوى تصويراً إلى الأبسط في الفئة</div>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">1</div><div><div class="profile-name">Xiaomi 13T Pro</div><div class="profile-tag">أفضل هاتف تصوير في القائمة</div></div></div>
+        <ul class="profile-points">
+          <li>عدسة Leica المعتمدة</li>
+          <li>تصوير ليلي قوي جداً</li>
+          <li>فيديو 4K60 من الكاميرا الخلفية</li>
+          <li>يدعم التصوير حتى دقة 8K</li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">2</div><div><div class="profile-name">Honor 400</div><div class="profile-tag">توازن مثالي بين الجودة والسيلفي</div></div></div>
+        <ul class="profile-points">
+          <li>كاميرا رئيسية بدقة 200 ميجابكسل</li>
+          <li>كاميرا سيلفي 50 ميجابكسل ممتازة</li>
+          <li>صور ثابتة عالية الجودة جداً</li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">3</div><div><div class="profile-name">Redmi Note 15 Pro</div><div class="profile-tag">الأفضل ضمن فئتها السعرية</div></div></div>
+        <ul class="profile-points">
+          <li>كاميرا 200 ميجابكسل مع تثبيت بصري OIS</li>
+          <li>جودة صور جيدة جداً للسعر المطروح</li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">4</div><div><div class="profile-name">Poco X7</div><div class="profile-tag">جيد لكن دون منافسيه الأعلى</div></div></div>
+        <ul class="profile-points">
+          <li>أداء كاميرا مقبول ضمن فئته</li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">5</div><div><div class="profile-name">Realme 15T</div><div class="profile-tag">مناسب للاستخدام اليومي</div></div></div>
+        <ul class="profile-points">
+          <li>كاميرا مقبولة، ليست أولوية الجهاز</li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="profile-head"><div class="profile-rank">6</div><div><div class="profile-name">Infinix Note 50 Pro</div><div class="profile-tag">ليس مخصصاً لهواة التصوير</div></div></div>
+        <ul class="profile-points">
+          <li>أداء كاميرا أساسي</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ WIFI RANKING ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+      <div>
+        <div class="sec-title">ترتيب كرت شبكة Wi-Fi</div>
+        <div class="sec-sub">إذا كان لديك راوتر حديث، الفارق يصبح ملحوظاً جداً</div>
+      </div>
+    </div>
+    <div class="rank-list">
+      <div class="rank-item gold"><div class="rank-badge">1</div><div class="rank-body"><div class="rank-name">Xiaomi 13T Pro</div><div class="rank-desc">Wi-Fi 7 — يتفوق بوضوح مع الراوترات الحديثة</div></div></div>
+      <div class="rank-item silver"><div class="rank-badge">2</div><div class="rank-body"><div class="rank-name">Honor 400</div><div class="rank-desc">Wi-Fi 6</div></div></div>
+      <div class="rank-item"><div class="rank-badge">3</div><div class="rank-body"><div class="rank-name">Poco X7</div><div class="rank-desc">Wi-Fi 6</div></div></div>
+      <div class="rank-item"><div class="rank-badge">4</div><div class="rank-body"><div class="rank-name">Redmi Note 15 Pro</div><div class="rank-desc">Wi-Fi 6</div></div></div>
+      <div class="rank-item"><div class="rank-badge">5</div><div class="rank-body"><div class="rank-name">Realme 15T</div><div class="rank-desc">Wi-Fi 6</div></div></div>
+      <div class="rank-item"><div class="rank-badge">6</div><div class="rank-body"><div class="rank-name">Infinix Note 50 Pro</div><div class="rank-desc">Wi-Fi 5</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ 4K VIDEO SUPPORT TABLE ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div>
+        <div class="sec-title">دعم تصوير الفيديو بدقة 4K</div>
+        <div class="sec-sub">مقارنة تفصيلية بين الكاميرا الخلفية والأمامية</div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>الهاتف</th><th>خلفية 4K30</th><th>خلفية 4K60</th><th>أمامية 4K30</th><th>أمامية 4K60</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Xiaomi 13T Pro</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+          <tr><td>Honor 400</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td></tr>
+          <tr><td>Poco X7</td><td><span class="unsure">محدود</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+          <tr><td>Redmi Note 15 Pro</td><td><span class="yes">✓</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+          <tr><td>Infinix Note 50 Pro</td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td><td><span class="no">✗</span></td></tr>
+          <tr><td>Realme 15T</td><td><span class="unsure">غير مؤكد</span></td><td><span class="unsure">غير مؤكد</span></td><td><span class="unsure">غير مؤكد</span></td><td><span class="unsure">غير مؤكد</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════ UI RANKING ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div>
+        <div class="sec-title">ترتيب جودة الواجهة</div>
+        <div class="sec-sub">من الأكثر استقراراً وخفّة إلى الأقل نضجاً</div>
+      </div>
+    </div>
+    <div class="rank-list">
+      <div class="rank-item gold"><div class="rank-badge">1</div><div class="rank-body"><div class="rank-name">MagicOS — Honor 400</div><div class="rank-desc">أقل إعلانات، أكثر استقراراً، ذكاء اصطناعي متقدم، إدارة بطارية ممتازة</div></div></div>
+      <div class="rank-item silver"><div class="rank-badge">2</div><div class="rank-body"><div class="rank-name">Realme UI</div><div class="rank-desc">سريعة وخفيفة، قريبة من أندرويد الخام</div></div></div>
+      <div class="rank-item"><div class="rank-badge">3</div><div class="rank-body"><div class="rank-name">HyperOS — Xiaomi / Redmi / Poco</div><div class="rank-desc">غنية بالمزايا وتخصيص هائل، لكن بها تطبيقات وإعلانات في بعض الأسواق</div></div></div>
+      <div class="rank-item"><div class="rank-badge">4</div><div class="rank-body"><div class="rank-name">XOS — Infinix</div><div class="rank-desc">أقل نضجاً مقارنة بالواجهات الأخرى</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ UPDATES RANKING ══════════ -->
+  <div class="card">
+    <div class="sec-head">
+      <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 11-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
+      <div>
+        <div class="sec-title">ترتيب دعم التحديثات</div>
+        <div class="sec-sub">عدد سنوات تحديثات النظام والأمان المضمونة</div>
+      </div>
+    </div>
+    <div class="rank-list">
+      <div class="rank-item gold"><div class="rank-badge">1</div><div class="rank-body"><div class="rank-name">Honor 400</div><div class="rank-desc">6 سنوات تحديثات نظام + 6 سنوات تحديثات أمنية</div></div></div>
+      <div class="rank-item silver"><div class="rank-badge">2</div><div class="rank-body"><div class="rank-name">Xiaomi 13T Pro</div><div class="rank-desc">4 أجيال أندرويد + 5 سنوات أمنية</div></div></div>
+      <div class="rank-item"><div class="rank-badge">3</div><div class="rank-body"><div class="rank-name">Redmi Note 15 Pro</div><div class="rank-desc">3–4 سنوات تقريباً</div></div></div>
+      <div class="rank-item"><div class="rank-badge">4</div><div class="rank-body"><div class="rank-name">Poco X7</div><div class="rank-desc">3 سنوات نظام + 4 سنوات أمان</div></div></div>
+      <div class="rank-item"><div class="rank-badge">5</div><div class="rank-body"><div class="rank-name">Realme 15T</div><div class="rank-desc">3–4 سنوات تقريباً</div></div></div>
+      <div class="rank-item"><div class="rank-badge">6</div><div class="rank-body"><div class="rank-name">Infinix Note 50 Pro</div><div class="rank-desc">سنتان تقريباً</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ FINAL VERDICT ══════════ -->
+  <div class="verdict">
+    <div class="dr dr1"></div><div class="dr dr2"></div>
+    <div class="verdict-title">
+      <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19 15a1 1 0 00.2 1.1l.1.1a2 2 0 010 2.8 2 2 0 01-2.8 0l-.1-.1a1 1 0 00-1.1-.2 1 1 0 00-.6.9V20a2 2 0 01-4 0v-.1a1 1 0 00-.6-1 1 1 0 00-1.1.2l-.1.1a2 2 0 01-2.8 0 2 2 0 010-2.8l.1-.1a1 1 0 00.2-1.1 1 1 0 00-.9-.6H4a2 2 0 010-4h.1a1 1 0 00.9-.6 1 1 0 00-.2-1.1l-.1-.1a2 2 0 010-2.8 2 2 0 012.8 0l.1.1a1 1 0 001.1.2H9a1 1 0 00.6-.9V4a2 2 0 014 0v.1a1 1 0 00.6.9 1 1 0 001.1-.2l.1-.1a2 2 0 012.8 0 2 2 0 010 2.8l-.1.1a1 1 0 00-.2 1.1V9a1 1 0 00.9.6H20a2 2 0 010 4h-.1a1 1 0 00-.9.6z"/></svg>
+      الترتيب النهائي الشامل
+    </div>
+
+    <div class="verdict-grid">
+      <div class="v-card win">
+        <div class="v-rank-icon">🥇</div>
+        <div class="v-name">Xiaomi 13T Pro</div>
+        <div class="v-desc">أقوى معالج، أفضل كاميرا، Wi-Fi 7، وأفضل جودة فيديو — الخيار الأمثل لعشاق التصوير والأداء العالي والألعاب.</div>
+      </div>
+      <div class="v-card win">
+        <div class="v-rank-icon">🥈</div>
+        <div class="v-name">Honor 400</div>
+        <div class="v-desc">أفضل دعم تحديثات على الإطلاق (6 سنوات)، واجهة مستقرة، وكاميرات ممتازة — مثالي لمن يبحث عن الاستقرار طويل المدى.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-rank-icon">🥉</div>
+        <div class="v-name">Redmi Note 15 Pro 5G</div>
+        <div class="v-desc">توازن جيد جداً بين الأداء والسعر، مناسب للاستخدام اليومي المتوازن.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-rank-icon">4️⃣</div>
+        <div class="v-name">Poco X7</div>
+        <div class="v-desc">خيار مقبول ضمن الفئة المتوسطة بمواصفات معتدلة.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-rank-icon">5️⃣</div>
+        <div class="v-name">Realme 15T</div>
+        <div class="v-desc">مناسب للاستخدام الأساسي اليومي بميزانية محدودة.</div>
+      </div>
+      <div class="v-card">
+        <div class="v-rank-icon">6️⃣</div>
+        <div class="v-name">Infinix Note 50 Pro</div>
+        <div class="v-desc">خيار اقتصادي، لكنه الأضعف بين الأجهزة الستة من حيث المواصفات العامة.</div>
+      </div>
+    </div>
+
+    <div class="verdict-note">
+      إذا كان يهمك <strong>التصوير والأداء والألعاب</strong> فإن <strong>Xiaomi 13T Pro</strong> يتفوّق بوضوح على بقية المنافسين.
+      أما إذا كانت أولويتك <strong>الاستقرار وطول مدة الدعم والتحديثات والواجهة</strong> فإن <strong>Honor 400</strong> هو الخيار الأقوى بلا منازع.
+    </div>
+  </div>
+
+  <!-- ══════════ AUTHOR FOOTER ══════════ -->
+  <div class="footer-card">
+    <div class="footer-avatar">
+      <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
+    <div>
+      <div class="footer-label">إعداد وتحليل</div>
+      <div class="footer-name">الأستاذ حيدر فاضل</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
